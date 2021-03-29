@@ -1,0 +1,14 @@
+###################
+cockroach-data
+private
+certs
+certs1
+certs2
+certs3
+vendor
+go.mod
+go.sum
+
+# archives #
+############
+*.tar.gz

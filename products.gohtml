@@ -1,0 +1,106 @@
+{{define "products.gohtml"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+<script async src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+<div hidden id="snipcart" data-api-key="ZjMxZTEwMzEtMzFhZS00YjQyLTgxNDMtMTM4ZjVlZmFlMDY1NjM3MjkzMjU0MTU5NTQyMzU0"></div>
+<meta charset="UTF-8">
+<title>example.com</title>
+</head>
+<body style="background-color:black;color:white;">
+<center>
+<br>
+<div id="content">
+<div class="Products">
+<h1>Product Database</h1>
+<div class="actions">
+</div>
+<br>
+<div>
+</div>
+<br>
+<table class="table table-sm table-bordered ">
+<thead class="thead-dark">
+
+<tr>
+  <th>partno</th>
+<!-- <th>name</th> -->
+<th>price</th>
+<th>description</th>
+<th></th>
+<!-- <th>category</th> -->
+<!-- <th></th> -->
+<!-- <th scope="col" colspan="3"> </th> -->
+</tr>
+
+</thead>
+
+<tbody id="myTable">
+{{range .}}
+<tr>
+<td><a class="action" href="/product/{{.PartNo}}">{{.PartNo}}</a></td>
+<!-- <td>{{.Name}}</td> -->
+<td>${{.Price}}</td>
+<td>{{.Description1}}</td>
+<!-- <td>{{.Category}}</td> -->
+<td>{{ if le .Qty 0 }}
+    <span>Out of stock</span>
+{{ else }}
+  <button
+    class="snipcart-add-item"
+    data-item-id="{{ .PartNo }}"
+    data-item-name="{{.Name}}"
+    data-item-price="{{.Price}}"
+    data-item-image=""
+    data-item-url="/product/{{ .PartNo }}"
+    data-item-max-quantity="100"
+    data-item-description="{{.Description1}}">
+    Add to cart
+  </button>
+{{end}}</td>
+</tr>
+{{end}}
+</tbody>
+
+</table>
+
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a class="action" href="/about">About</a>
+</center>
+</body>
+</html>
+{{end}}
